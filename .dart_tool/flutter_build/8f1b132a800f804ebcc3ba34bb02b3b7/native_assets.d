@@ -1,0 +1,1 @@
+ D:\\Flutter\\pharmacy\\.dart_tool\\flutter_build\\8f1b132a800f804ebcc3ba34bb02b3b7\\native_assets.yaml: 

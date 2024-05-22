@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:pharmacy/model/employees.dart';
 import 'package:pharmacy/model/products.dart';
-import 'package:pharmacy/model/sales.dart';
 import 'package:http/http.dart' as http;
 import 'home.dart';
 
@@ -28,10 +27,9 @@ class _add_customerState extends State<add_customer> {
   TextEditingController payMethod = TextEditingController();
   TextEditingController empId = TextEditingController();
 
-    List<Employees>? productModel;
+  List<Employees>? productModel;
 
-    final String getEmp =
-      'https://pharmacy-project-spring-3.onrender.com/emp';
+  final String getEmp = 'https://pharmacy-project-spring-3.onrender.com/emp';
 
   _getData() async {
     try {
@@ -49,7 +47,7 @@ class _add_customerState extends State<add_customer> {
     }
   }
 
-    @override
+  @override
   void initState() {
     super.initState();
     _getData();
@@ -96,18 +94,17 @@ class _add_customerState extends State<add_customer> {
                   controller: name,
                   decoration: InputDecoration(
                     enabledBorder: const OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.teal, width: 2.0),
+                      borderSide: BorderSide(color: Colors.teal, width: 2.0),
                     ),
                     focusedBorder: const OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.teal, width: 2.0),
+                      borderSide: BorderSide(color: Colors.teal, width: 2.0),
                     ),
                     fillColor: Colors.teal[100],
                     filled: true,
                     border: const OutlineInputBorder(),
                     labelText: 'Name',
-                    labelStyle: const TextStyle(color: Colors.black, fontSize: 20.0),
+                    labelStyle:
+                        const TextStyle(color: Colors.black, fontSize: 20.0),
                     prefixIcon: const Icon(Icons.medication),
                   ),
                 ),
@@ -119,18 +116,17 @@ class _add_customerState extends State<add_customer> {
                   keyboardType: TextInputType.phone,
                   decoration: InputDecoration(
                     enabledBorder: const OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.teal, width: 2.0),
+                      borderSide: BorderSide(color: Colors.teal, width: 2.0),
                     ),
                     focusedBorder: const OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.teal, width: 2.0),
+                      borderSide: BorderSide(color: Colors.teal, width: 2.0),
                     ),
                     fillColor: Colors.teal[100],
                     filled: true,
                     border: const OutlineInputBorder(),
                     labelText: 'Contact',
-                    labelStyle: const TextStyle(color: Colors.black, fontSize: 20.0),
+                    labelStyle:
+                        const TextStyle(color: Colors.black, fontSize: 20.0),
                     prefixIcon: const Icon(Icons.contact_phone),
                   ),
                 ),
@@ -142,12 +138,10 @@ class _add_customerState extends State<add_customer> {
                   readOnly: false,
                   decoration: const InputDecoration(
                     enabledBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.teal, width: 2.0),
+                      borderSide: BorderSide(color: Colors.teal, width: 2.0),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderSide:
-                           BorderSide(color: Colors.teal, width: 2.0),
+                      borderSide: BorderSide(color: Colors.teal, width: 2.0),
                     ),
                     fillColor: Color.fromARGB(255, 178, 223, 219),
                     filled: true,
@@ -166,42 +160,40 @@ class _add_customerState extends State<add_customer> {
                   keyboardType: TextInputType.name,
                   decoration: InputDecoration(
                     enabledBorder: const OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.teal, width: 2.0),
+                      borderSide: BorderSide(color: Colors.teal, width: 2.0),
                     ),
                     focusedBorder: const OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.teal, width: 2.0),
+                      borderSide: BorderSide(color: Colors.teal, width: 2.0),
                     ),
                     fillColor: Colors.teal[100],
                     filled: true,
                     border: OutlineInputBorder(),
                     labelText: 'Payment Method',
-                    labelStyle: const TextStyle(color: Colors.black, fontSize: 20.0),
+                    labelStyle:
+                        const TextStyle(color: Colors.black, fontSize: 20.0),
                     prefixIcon: const Icon(Icons.attach_money),
                   ),
                 ),
               ),
               Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
-                  child: DropdownButtonFormField(
-                    value: null,
-                    hint: const Text(
-                        'Employee in Charge'),
-                    items: productModel?.map((emp) {
-                          return DropdownMenuItem(
-                            value: emp.id,
-                            child: Text(emp.name ?? ''),
-                          );
-                        }).toList() ??
-                        [], 
-                    onChanged: (value) {
-                      setState(() {
-                        empId.text = value.toString();
-                      });
-                    },
-                  ),
+                padding: const EdgeInsets.only(top: 20.0),
+                child: DropdownButtonFormField(
+                  value: null,
+                  hint: const Text('Employee in Charge'),
+                  items: productModel?.map((emp) {
+                        return DropdownMenuItem(
+                          value: emp.id,
+                          child: Text(emp.name ?? ''),
+                        );
+                      }).toList() ??
+                      [],
+                  onChanged: (value) {
+                    setState(() {
+                      empId.text = value.toString();
+                    });
+                  },
                 ),
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 18.0),
                 child: Row(
@@ -230,16 +222,19 @@ class _add_customerState extends State<add_customer> {
                       padding: const EdgeInsets.all(8.0),
                       child: OutlinedButton.icon(
                         onPressed: () {
-                          g_name.value =
-                              TextEditingValue(text: name.toString());
+                          g_name.value = TextEditingValue(text: name.text);
                           g_contact.value =
-                              TextEditingValue(text: contact.toString());
+                              TextEditingValue(text: contact.text);
                           g_salesDate.value =
-                              TextEditingValue(text: salesDate.toString());
+                              TextEditingValue(text: salesDate.text);
                           g_payMethod.value =
-                              TextEditingValue(text: payMethod.toString());
-                          g_empId.value =
-                              TextEditingValue(text: empId.toString());
+                              TextEditingValue(text: payMethod.text);
+                          g_empId.value = TextEditingValue(text: empId.text);
+                          print(g_name.text +
+                              g_contact.text +
+                              g_salesDate.text +
+                              g_payMethod.text +
+                              g_empId.text);
                           Navigator.push(
                               context,
                               DialogRoute(
@@ -290,14 +285,8 @@ class add_sales extends StatefulWidget {
 class _add_salesState extends State<add_sales> {
   TextEditingController productName = TextEditingController();
   TextEditingController productQty = TextEditingController();
-  final List<Sales> salesDetails = List.empty(growable: true);
-
-  String getSales() {
-    for (var element in salesDetails) {
-      return element.productName.toString();
-    }
-    return "";
-  }
+  final List<Map<String, dynamic>> salesDetails = [];
+                    
 
   final String postCompany =
       'https://pharmacy-project-spring-3.onrender.com/customer';
@@ -305,12 +294,13 @@ class _add_salesState extends State<add_sales> {
   Future<void> postdata() async {
     var reqBody = {
       "name": g_name.text,
-      "doctorID": g_contact.text,
-      "representativeName": g_salesDate.text,
-      "representativeContact": g_payMethod.text,
-      "supplyAddress": g_empId.text,
+      "contact": g_contact.text,
+      "purchaseDate": g_salesDate.text,
+      "payMethod": g_payMethod.text,
+      "empId": g_empId.text,
       "salesDetailDTOS": salesDetails
     };
+    print(reqBody);
     var response = await http.post(Uri.parse(postCompany),
         headers: {"Content-Type": "application/json"},
         body: jsonEncode(reqBody));
@@ -319,10 +309,9 @@ class _add_salesState extends State<add_sales> {
     print(response.statusCode);
   }
 
+  List<Products>? productModel;
 
-    List<Products>? productModel;
-
-    final String getProduct =
+  final String getProduct =
       'https://pharmacy-project-spring-3.onrender.com/product';
 
   _getData() async {
@@ -341,14 +330,11 @@ class _add_salesState extends State<add_sales> {
     }
   }
 
-    @override
+  @override
   void initState() {
     super.initState();
     _getData();
   }
-
-
-  
 
   @override
   Widget build(BuildContext context) {
@@ -370,25 +356,24 @@ class _add_salesState extends State<add_sales> {
               child: Column(
                 children: [
                   Padding(
-                  padding: const EdgeInsets.only(top: 20.0),
-                  child: DropdownButtonFormField(
-                    value: null,
-                    hint: const Text(
-                        'Select Product'),
-                    items: productModel?.map((product) {
-                          return DropdownMenuItem(
-                            value: product.tradeName,
-                            child: Text(product.tradeName ?? ''),
-                          );
-                        }).toList() ??
-                        [], 
-                    onChanged: (value) {
-                      setState(() {
-                        productName.text = value.toString();
-                      });
-                    },
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: DropdownButtonFormField(
+                      value: null,
+                      hint: const Text('Select Product'),
+                      items: productModel?.map((product) {
+                            return DropdownMenuItem(
+                              value: product.tradeName,
+                              child: Text(product.tradeName ?? ''),
+                            );
+                          }).toList() ??
+                          [],
+                      onChanged: (value) {
+                        setState(() {
+                          productName.text = value.toString();
+                        });
+                      },
+                    ),
                   ),
-                ),
                   Padding(
                     padding: const EdgeInsets.only(top: 20.0),
                     child: TextField(
@@ -407,9 +392,10 @@ class _add_salesState extends State<add_sales> {
                         filled: true,
                         border: const OutlineInputBorder(),
                         labelText: 'Product Quantity',
-                        labelStyle:
-                            const TextStyle(color: Colors.black, fontSize: 20.0),
-                        prefixIcon: const Icon(Icons.production_quantity_limits),
+                        labelStyle: const TextStyle(
+                            color: Colors.black, fontSize: 20.0),
+                        prefixIcon:
+                            const Icon(Icons.production_quantity_limits),
                       ),
                     ),
                   ),
@@ -418,9 +404,10 @@ class _add_salesState extends State<add_sales> {
                     child: OutlinedButton(
                       onPressed: () {
                         print("object04");
-                        salesDetails.add(Sales(
-                            productName: productName.text,
-                            productQTY: productQty.text));
+                        Map<String, dynamic> data = new Map<String, dynamic>();
+                        data['productId'] = productName.text;
+                        data['productQuantity'] = productQty.text;
+                        salesDetails.add(data);
                         print("object05");
                       },
                       style: OutlinedButton.styleFrom(

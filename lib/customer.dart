@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:pharmacy/model/employees.dart';
@@ -286,10 +285,8 @@ class _add_salesState extends State<add_sales> {
   TextEditingController productName = TextEditingController();
   TextEditingController productQty = TextEditingController();
   final List<Map<String, dynamic>> salesDetails = [];
-                    
 
-  final String postCompany =
-      'https://pharmacy-spring.onrender.com/customer';
+  final String postCompany = 'https://pharmacy-spring.onrender.com/customer';
 
   Future<void> postdata() async {
     var reqBody = {
@@ -304,15 +301,14 @@ class _add_salesState extends State<add_sales> {
     var response = await http.post(Uri.parse(postCompany),
         headers: {"Content-Type": "application/json"},
         body: jsonEncode(reqBody));
-    var jsonResponse = jsonDecode(response.body);
-    print(jsonResponse);
+    // var jsonResponse = jsonDecode(response.body);
+    // print(jsonResponse);
     print(response.statusCode);
   }
 
   List<Products>? productModel;
 
-  final String getProduct =
-      'https://pharmacy-spring.onrender.com/product';
+  final String getProduct = 'https://pharmacy-spring.onrender.com/product';
 
   _getData() async {
     try {

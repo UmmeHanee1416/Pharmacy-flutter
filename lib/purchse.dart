@@ -24,7 +24,7 @@ class _add_purchaseState extends State<add_purchase> {
   List<Products>? productModel;
 
     final String getProduct =
-      'https://pharmacy-project-spring-3.onrender.com/product';
+      'https://pharmacy-spring.onrender.com/product';
 
   _getData() async {
     try {
@@ -50,7 +50,7 @@ class _add_purchaseState extends State<add_purchase> {
 
 
       final String postPurchase =
-      'https://pharmacy-project-spring-3.onrender.com/purchase';
+      'https://pharmacy-spring.onrender.com/purchase';
 
   Future<void> postdata() async {
     var reqBody = {

@@ -11,7 +11,7 @@ class add_generic extends StatelessWidget {
   final TextEditingController quantity = TextEditingController();
 
   final String postCompany =
-      'https://pharmacy-project-spring-3.onrender.com/generic';
+      'https://pharmacy-spring.onrender.com/generic';
 
   Future<void> postdata() async {
     var reqBody = {
@@ -145,7 +145,7 @@ class _list_genericState extends State<list_generic> {
   late List<Generics>? doctorModel = [];
 
   final String getDoctor =
-      'https://pharmacy-project-spring-3.onrender.com/generic';
+      'https://pharmacy-spring.onrender.com/generic';
 
   void _getData() async {
     try {

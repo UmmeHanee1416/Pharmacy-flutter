@@ -19,7 +19,7 @@ class _add_companyState extends State<add_company> {
   TextEditingController supplyAddress = TextEditingController();
 
     final String postCompany =
-      'https://pharmacy-project-spring-3.onrender.com/company';
+      'https://pharmacy-spring.onrender.com/company';
 
   Future<void> postdata() async {
     var reqBody = {
@@ -40,7 +40,7 @@ class _add_companyState extends State<add_company> {
   List<Doctors>? doctorModel; // Removed 'late' modifier
 
   final String getDoctor =
-      'https://pharmacy-project-spring-3.onrender.com/doctor';
+      'https://pharmacy-spring.onrender.com/doctor';
 
   _getData() async {
     try {

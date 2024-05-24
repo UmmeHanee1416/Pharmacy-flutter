@@ -19,7 +19,7 @@ class _add_doctorState extends State<add_doctor> {
   TextEditingController contact = TextEditingController();
 
   final String postDoctor =
-      'https://pharmacy-project-spring-3.onrender.com/doctor';
+      'https://pharmacy-spring.onrender.com/doctor';
 
   Future<void> postdata() async {
     var reqBody = {
@@ -203,7 +203,7 @@ class _doctor_listState extends State<doctor_list> {
   late List<Doctors>? doctorModel = [];
 
   final String getDoctor =
-      'https://pharmacy-project-spring-3.onrender.com/doctor';
+      'https://pharmacy-spring.onrender.com/doctor';
 
   void _getData() async {
     try {

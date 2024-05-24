@@ -21,7 +21,7 @@ class _add_company_returnState extends State<add_company_return> {
   late List<Products>? genericModel = [];
 
   final String getGeneric =
-      'https://pharmacy-project-spring-3.onrender.com/product';
+      'https://pharmacy-spring.onrender.com/product';
 
   void _getGenerics() async {
     try {
@@ -35,7 +35,7 @@ class _add_company_returnState extends State<add_company_return> {
     }
   }
 
-  String postProduct = 'https://pharmacy-project-spring-3.onrender.com/retcomp';
+  String postProduct = 'https://pharmacy-spring.onrender.com/retcomp';
 
   Future<void> postdata() async {
     var reqBody = {

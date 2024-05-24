@@ -22,7 +22,7 @@ class _create_productState extends State<create_product> {
   TextEditingController expd = TextEditingController();
   TextEditingController mrp = TextEditingController();
 
-  String postProduct = 'https://pharmacy-project-spring-3.onrender.com/product';
+  String postProduct = 'https://pharmacy-spring.onrender.com/product';
  
   Future<void> postdata() async {
     var reqBody = {
@@ -47,7 +47,7 @@ class _create_productState extends State<create_product> {
   List<Companies>? companyModel;
 
   final String getCompany =
-      'https://pharmacy-project-spring-3.onrender.com/company';
+      'https://pharmacy-spring.onrender.com/company';
 
   _getCompanies() async {
     try {
@@ -69,7 +69,7 @@ class _create_productState extends State<create_product> {
   late List<Generics>? genericModel = [];
 
   final String getGeneric =
-      'https://pharmacy-project-spring-3.onrender.com/generic';
+      'https://pharmacy-spring.onrender.com/generic';
 
   void _getGenerics() async {
     try {

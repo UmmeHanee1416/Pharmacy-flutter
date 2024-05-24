@@ -118,7 +118,7 @@ class med_list extends StatefulWidget {
 class _med_listState extends State<med_list> {
   late List<Products>? _productModel = [];
 
-  final String meds = 'https://pharmacy-project-spring-3.onrender.com/product';
+  final String meds = 'https://pharmacy-spring.onrender.com/product';
 
   void _getData() async {
     try {
@@ -163,7 +163,7 @@ class _med_listState extends State<med_list> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   const Text("Available QTY"),
-                  Text(_productModel![index].regsrtQuantity.toString()),
+                  Text(_productModel![index].remainedQuantity.toString()),
                 ],
               ),
             ),
@@ -245,7 +245,7 @@ class _medicineState extends State<medicine> {
                 child: Container(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      "Available Qty: ${widget.medId.regsrtQuantity}",
+                      "Available Qty: ${widget.medId.remainedQuantity}",
                       style: const TextStyle(
                         fontSize: 15.0,
                       ),

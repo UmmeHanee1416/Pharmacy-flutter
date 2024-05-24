@@ -22,11 +22,11 @@ class _add_employeeState extends State<add_employee> {
   TextEditingController fMembers = TextEditingController();
 
   final String postEmpDetails =
-      'https://pharmacy-project-spring-3.onrender.com/empdet';
+      'https://pharmacy-spring.onrender.com/empdet';
   final String getEmpDetails =
-      'https://pharmacy-project-spring-3.onrender.com/empdet';
+      'https://pharmacy-spring.onrender.com/empdet';
   List<EmployeeDetails>? productModel;
-  final String postEmp = 'https://pharmacy-project-spring-3.onrender.com/emp';
+  final String postEmp = 'https://pharmacy-spring.onrender.com/emp';
 
   Future<void> postdata() async {
     var reqBody = {

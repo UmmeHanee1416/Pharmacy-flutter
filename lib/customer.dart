@@ -29,7 +29,7 @@ class _add_customerState extends State<add_customer> {
 
   List<Employees>? productModel;
 
-  final String getEmp = 'https://pharmacy-project-spring-3.onrender.com/emp';
+  final String getEmp = 'https://pharmacy-spring.onrender.com/emp';
 
   _getData() async {
     try {
@@ -289,7 +289,7 @@ class _add_salesState extends State<add_sales> {
                     
 
   final String postCompany =
-      'https://pharmacy-project-spring-3.onrender.com/customer';
+      'https://pharmacy-spring.onrender.com/customer';
 
   Future<void> postdata() async {
     var reqBody = {
@@ -312,7 +312,7 @@ class _add_salesState extends State<add_sales> {
   List<Products>? productModel;
 
   final String getProduct =
-      'https://pharmacy-project-spring-3.onrender.com/product';
+      'https://pharmacy-spring.onrender.com/product';
 
   _getData() async {
     try {
@@ -405,10 +405,14 @@ class _add_salesState extends State<add_sales> {
                       onPressed: () {
                         print("object04");
                         Map<String, dynamic> data = new Map<String, dynamic>();
+                        data['salesId'] = 0;
                         data['productId'] = productName.text;
                         data['productQuantity'] = productQty.text;
+                        data['totalCharge'] = 0;
                         salesDetails.add(data);
                         print("object05");
+                        productName.clear();
+                        productQty.clear();
                       },
                       style: OutlinedButton.styleFrom(
                         foregroundColor: Colors.teal[700],

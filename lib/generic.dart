@@ -208,7 +208,7 @@ class _list_genericState extends State<list_generic> {
                   children: [
                     Text("Name: "),
                     Text(doctorModel![index].genericName.toString()),
-                    Text("Contact: "),
+                    Text("Quantity: "),
                     Text(doctorModel![index].registeredQuantity.toString()),
                   ],
                 ),

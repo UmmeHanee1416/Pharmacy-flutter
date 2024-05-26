@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:pharmacy/customer.dart';
 import 'package:pharmacy/employee.dart';
+import 'package:pharmacy/generic.dart';
+import 'package:pharmacy/invoice.dart';
 import 'package:pharmacy/model/products.dart';
 import 'package:pharmacy/product.dart';
 import 'package:pharmacy/profile.dart';
@@ -98,7 +100,7 @@ class _HomeState extends State<Home> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const create_product(),
+                            builder: (context) => const list_generic(),
                           ));
                     },
                     child: const Icon(Icons.medication_liquid),

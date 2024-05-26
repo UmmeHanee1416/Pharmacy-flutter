@@ -1,27 +1,40 @@
 import 'dart:convert';
 
-
-List<Sales> usersFromJsonS(String string) =>
-    List<Sales>.from(jsonDecode(string).map((x) => Sales.fromJson(x)));
+List<Sales> salesFromJson(String string) => List<Sales>.from(jsonDecode(string).map((x) => Sales.fromJson(x)));
 
 class Sales {
   int? id;
-  String? productName;
-  String? productQTY;
+  String? customerId;
+  int? totalQuantity;
+  int? totalCharge;
+  int? empId;
+  String? empName;
 
-  Sales({this.id, this.productName, this.productQTY});
+  Sales(
+      {this.id,
+      this.customerId,
+      this.totalQuantity,
+      this.totalCharge,
+      this.empId,
+      this.empName});
 
   Sales.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    productName = json['productName'];
-    productQTY = json['productQTY'];
+    customerId = json['customerId'];
+    totalQuantity = json['totalQuantity'];
+    totalCharge = json['totalCharge'];
+    empId = json['empId'];
+    empName = json['empName'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['id'] = this.id;
-    data['productName'] = this.productName;
-    data['productQTY'] = this.productQTY;
+    data['customerId'] = this.customerId;
+    data['totalQuantity'] = this.totalQuantity;
+    data['totalCharge'] = this.totalCharge;
+    data['empId'] = this.empId;
+    data['empName'] = this.empName;
     return data;
   }
 }

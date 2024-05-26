@@ -1,7 +1,7 @@
 
 import 'dart:convert';
 
-List<Purchases> usersFromJson(String string) => List<Purchases>.from(jsonDecode(string).map((x) => Purchases.fromJson(x)));
+List<Purchases> purchaseFromJson(String string) => List<Purchases>.from(jsonDecode(string).map((x) => Purchases.fromJson(x)));
 
 class Purchases {
   int? id;

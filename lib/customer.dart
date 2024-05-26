@@ -1,9 +1,11 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:pharmacy/invoice.dart';
 import 'package:pharmacy/model/employees.dart';
 import 'package:pharmacy/model/products.dart';
 import 'package:http/http.dart' as http;
+import 'package:pharmacy/model/sales.dart';
 import 'home.dart';
 
 TextEditingController g_name = TextEditingController();
@@ -202,8 +204,7 @@ class _add_customerState extends State<add_customer> {
                       onPressed: () {
                         Navigator.push(
                             context,
-                            DialogRoute(
-                              context: context,
+                            MaterialPageRoute(
                               builder: (context) => const Home(),
                             ));
                       },
@@ -304,6 +305,11 @@ class _add_salesState extends State<add_sales> {
     // var jsonResponse = jsonDecode(response.body);
     // print(jsonResponse);
     print(response.statusCode);
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const list_invoice(),
+        ));
   }
 
   List<Products>? productModel;
@@ -399,14 +405,10 @@ class _add_salesState extends State<add_sales> {
                     padding: const EdgeInsets.all(18.0),
                     child: OutlinedButton(
                       onPressed: () {
-                        print("object04");
                         Map<String, dynamic> data = new Map<String, dynamic>();
-                        data['salesId'] = 0;
                         data['productId'] = productName.text;
                         data['productQuantity'] = productQty.text;
-                        data['totalCharge'] = 0;
                         salesDetails.add(data);
-                        print("object05");
                         productName.clear();
                         productQty.clear();
                       },
